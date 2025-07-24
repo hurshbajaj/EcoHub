@@ -1,0 +1,35 @@
+:root{
+    --primary: #262A38;
+    --orange: #EF8354;
+    --secondary: #2D3142;
+    --heading: #5e6d89;
+    --subheading: #414A5F;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*animation: fadeInUp 0.6s cubic-bezier(.77,0,.175,1);*/
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUpS {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 0.8;
+    transform: translateY(0);
+  }
+}

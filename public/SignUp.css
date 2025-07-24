@@ -1,0 +1,19 @@
+@import "utils.css";
+
+body {
+    overflow: hidden;
+    font-family: "Inconsolata";
+    display: flex;
+}
+
+.lhs {
+    position: absolute;
+    right: 65vw;
+    background-color: var(--primary);
+    width: 100vw;
+}
+.rhs {
+    width: 100%;
+    background-color: var(--secondary);
+    height: 100vh;
+}

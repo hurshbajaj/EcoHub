@@ -1,0 +1,147 @@
+@import "utils.css";
+
+:root{
+    --turn_dur: 1.2s;
+}
+
+body {
+    background-color: var(--secondary);
+    overflow: hidden;
+    font-family: "Inconsolata";
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--primary);
+  transform-origin: top left; 
+  transform: rotate(0deg);
+  z-index: 1;
+
+  transition: transform var(--turn_dur) cubic-bezier(.77,0,.175,1), width var(--turn_dur) cubic-bezier(.77,0,.175,1), height var(--turn_dur) cubic-bezier(.77,0,.175,1);
+}
+
+.head{
+    font-size: 4.5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+
+    position: fixed;
+    z-index: 100;
+    color: var(--heading);
+    font-weight: 500;
+
+    top: 18vh;
+    left: 10vw;
+    height: 16vh;
+}
+.heading{
+    opacity: 0;
+    animation: fadeInUp 0.6s calc(var(--turn_dur) - 0.2s) cubic-bezier(.77,0,.175,1) forwards;
+}
+.subh{
+    font-size: 2vw;
+    color: var(--subheading);
+    opacity: 0;
+    animation: fadeInUp 0.6s calc(var(--turn_dur) - 0.1s) cubic-bezier(.77,0,.175,1) forwards;
+    margin-left: 10px;
+}
+
+.feet{
+    position: fixed;
+    z-index: 100;
+    bottom: 3vh;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+    width: 100vw;
+}
+
+.foot{
+    color: white;
+    background-color: var(--orange);
+    border-radius: 15px;
+    height: 2.5vh;
+    width: 2vw;
+    padding: 2vh 5vw;
+    opacity: 0;
+    transition: margin-bottom 0.1s ease-out;
+}
+
+.foot:hover{
+    margin-bottom: 10px;
+}
+
+.sliders {
+    position: fixed;
+    right: 0;
+    top: 8vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 25vh;
+}
+
+.a{
+    width: 20vw;
+    margin-right: -5vw;
+    transform: translateX(17vw);
+    transition: transform 0.55s ease-out;
+    animation: slideIn 0.8s calc(var(--turn_dur) + 1s) ease-out forwards;
+}
+.a:hover{
+    transform: translateX(2vw);
+    cursor: pointer;
+}
+
+@keyframes slideIn {
+    0%{
+        margin-right: -5vw;
+    }
+    100%{
+        margin-right: 0;
+    }
+}
+
+.vec{
+    position: fixed;
+    z-index: 12;
+
+    left: 105vw;
+    top: 28vh;
+
+    animation: slideInMax 1.5s calc(var(--turn_dur) + 0.5s) cubic-bezier(.77,0,.175,1) forwards;
+    width: 20vw;
+
+}
+
+.fade-out {
+  opacity: 0 !important;
+  transform: translateY(20px) scale(0.98);
+  filter: blur(2px);
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out, filter 0.8s ease-in-out;
+}
+
+@keyframes slideInMax {
+    0%{
+        left: 105vw;
+    }
+    100%{
+        left: 52vw;
+    }
+}
+
+@keyframes finalPush {
+    0%{
+        left: 0;
+    }
+    100%{
+        left: 35vw;
+    }
+}
