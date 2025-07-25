@@ -1,3 +1,7 @@
+import { generateStarField } from "./utils.js";
+
+generateStarField()
+
 function updateOverlay() {
   const overlay = document.querySelector('.overlay');
 

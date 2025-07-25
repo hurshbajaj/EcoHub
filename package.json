@@ -1,0 +1,24 @@
+{
+  "name": "techvviz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "utils.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hurshbajaj/The-Calm-Cove.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/hurshbajaj/The-Calm-Cove/issues"
+  },
+  "homepage": "https://github.com/hurshbajaj/The-Calm-Cove#readme",
+  "dependencies": {
+    "path": "^0.12.7"
+  }
+}

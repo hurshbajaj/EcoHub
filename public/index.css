@@ -124,7 +124,6 @@ body {
 .fade-out {
   opacity: 0 !important;
   transform: translateY(20px) scale(0.98);
-  filter: blur(2px);
   transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out, filter 0.8s ease-in-out;
 }
 

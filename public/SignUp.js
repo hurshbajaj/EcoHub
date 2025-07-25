@@ -1,3 +1,7 @@
+import { generateStarField } from "./utils.js";
+
+generateStarField()
+
 function updateOverlay() {
   const overlay = document.querySelector('.lhs');
 
@@ -8,3 +12,13 @@ function updateOverlay() {
 
 window.addEventListener('load', updateOverlay);
 window.addEventListener('resize', updateOverlay);
+
+window.onload = () => {
+    const reqs = document.querySelectorAll('.req');
+
+    reqs.forEach((el, i) => {
+        const baseDelay = 1.5; 
+        const extraDelay = 0.1 * i; 
+        el.style.animation = `fadeInUp 0.5s ${baseDelay + extraDelay}s cubic-bezier(.77,0,.175,1) forwards`;
+    });
+}
