@@ -9,6 +9,7 @@
     --item: #2A2E3D;
     --item_highlight: #232734;
     --desc: #465060;
+    --sepB: #1d202b;
 }
 
 * {
@@ -40,7 +41,7 @@
 }
 
 .star {
-    z-index: 0;
+    z-index: 100;
     position: absolute;
     background: white;
     border-radius: 50%;

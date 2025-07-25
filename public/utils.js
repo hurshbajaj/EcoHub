@@ -1,4 +1,4 @@
-export function generateStarField() {
+export function generateStarField(target = document.body) {
     const totalStars = 150;
 
     Array.from({ length: totalStars }).forEach(() => {
@@ -14,6 +14,6 @@ export function generateStarField() {
             animationDuration: `${1 + Math.random() * 2}s`
         });
 
-        document.body.appendChild(sparkle);
+        target.appendChild(sparkle);
     });
 }
