@@ -46,10 +46,16 @@ function fade_out() {
 function align() {
   const overlay = document.querySelector('.overlay');
 
-  overlay.style.transform = 'rotate(90deg)';
+  document.querySelectorAll('.star').forEach(el => {
+    el.style.zIndex = "-1";
+  });
 
+  overlay.style.transform = 'rotate(90deg)';
   overlay.style.animation = "finalPush 0.6s 1.4s cubic-bezier(.77,0,.175,1) forwards";
 
-  setTimeout(()=>{window.location.href="/public/SignUp.html"}, 2000);
+  setTimeout(() => {
+    window.location.href = "/public/SignUp.html";
+  }, 2000);
 }
+
 

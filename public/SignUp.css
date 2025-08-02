@@ -13,7 +13,7 @@ body {
     background-color: var(--sepB);
     left: 35vw;
     height: 100vh;
-    animation: slideDownMax 0.6s ease-out forwards;
+    animation: slideDownMax 1.5s ease-out forwards;
 }
 
 @keyframes slideDownMax {
@@ -70,15 +70,24 @@ body {
     letter-spacing: 0.2vw;
     position: fixed;
 
-    animation: heading 0.6s ease-out;
+    animation: heading 1.5s ease-out;
 }
 
 @keyframes heading {
     0%{
-        margin-top: -50vh;
+        margin-top: -100vh;
     }
     100%{
         margin-top: 10vh;
+    }
+}
+
+@keyframes headingOut {
+    0%{
+        margin-top: 10vh;
+    }
+    100%{
+        margin-top: -100vh;
     }
 }
 
@@ -97,7 +106,7 @@ body {
     width: 300%;
     height: 7%;
 
-    animation: feet 0.3s 1s cubic-bezier(0,0.4,.8,1) forwards;
+    animation: feet 0.5s 1s cubic-bezier(0,0.4,.8,1) forwards;
 }
 @keyframes feet {
     0%{
@@ -107,18 +116,50 @@ body {
         width: 100%;
     }
 }
+
+@keyframes feetOut {
+    0%{
+        width: 100%;
+    }
+    100%{
+        width: 300%;
+    }
+}
+
 .foot {
-    width: 44%;
+    width: calc(44% - 2vw);
     height: 100%;
     background-color: var(--secondary);
 
     border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+
+    font-size: 18px;
+    
+    color: var(--sub);
+    
+    transition: transform 0.8s ease-out, color 0.8s;
 }
 .lf {
     float: left;
+    justify-content: end;
+    padding-right: 2vw;
 }
 .rf {
+    padding-left: 2vw;
     float: right;
+    justify-content: start;
+}
+.foot:hover{
+    cursor: pointer;
+}
+.hovO:hover{
+    transform: translateX(9vw);
+}
+.hovT:hover{
+    transform: translateX(-9vw);
 }
 .hotbar{
     width: 90%;
@@ -170,6 +211,10 @@ body {
     background-color: var(--item);
     width: 90%;
 }
+.req:hover{
+    cursor: pointer;
+    transform: scale(0.98) !important;
+}
 .req_sub{
     flex: 1;
     background-color: var(--item_highlight);
@@ -179,4 +224,26 @@ body {
 .desc{
     padding: 2vh 1vw;
     color: var(--desc);
+}
+.reqBtn{
+    position: fixed;
+    right: 2vw;
+    bottom: 2vw;
+    border: none;
+    padding: 2vh 2vw;
+    background-color: var(--sepB);
+    color: white;
+    border-radius: 8px;
+    font-size: 2.2vh;
+    font-weight: 700;
+
+    opacity: 0;
+
+    animation: fadeInUp 0.6s 1s cubic-bezier(.77,0,.175,1) forwards;
+    transition: all 0.2s ease-out !important;
+}
+.reqBtn:hover{
+    background-color: #1d202bbc;
+    color: #4f5d75bc;
+    cursor: pointer;
 }

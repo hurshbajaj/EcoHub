@@ -4,7 +4,7 @@
     --secondary: #2D3142;
     --heading: #5e6d89;
     --subheading: #414A5F;
-    --sub: #4F5D75;
+    --sub: #4f5d75;
     --darkprim: #232734;
     --item: #2A2E3D;
     --item_highlight: #232734;
@@ -45,7 +45,6 @@
     position: absolute;
     background: white;
     border-radius: 50%;
-    opacity: 0.8;
     animation: twinkle 2s infinite ease-in-out;
 }
 
@@ -65,4 +64,21 @@
     50% {
         opacity: 0.1;
     }
+}
+
+.fade-out {
+  opacity: 0 !important;
+  transform: translateY(20px) scale(0.98);
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out, filter 0.8s ease-in-out !important;
+}
+
+@keyframes fadeOut {
+  0%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(20px);
+    opacity: 0;
+  }
 }

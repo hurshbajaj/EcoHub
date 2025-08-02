@@ -121,12 +121,6 @@ body {
 
 }
 
-.fade-out {
-  opacity: 0 !important;
-  transform: translateY(20px) scale(0.98);
-  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out, filter 0.8s ease-in-out;
-}
-
 @keyframes slideInMax {
     0%{
         left: 105vw;
