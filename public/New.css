@@ -184,6 +184,10 @@ body {
     z-index: 1;
 }
 
+.anim{
+    opacity: 0;
+}
+
 .frm{
     height: 100%;
     display: flex;
@@ -276,6 +280,12 @@ input:focus::placeholder {
 .item{
     text-align: center;
     user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;    
+    -ms-user-select: none;     
+}
+.item::selection{
+    background-color: transparent;
 }
 
 .ptsI:hover{

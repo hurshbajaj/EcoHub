@@ -1,11 +1,5 @@
 import { generateStarField, outro } from "./utils.js";
 
-const reqs = document.querySelectorAll(".anim");
-
-reqs.forEach((el, i) => {
-  el.style.opacity = "0";
-});
-
 generateStarField(document.querySelector(".rhs"));
 
 function updateOverlay() {
