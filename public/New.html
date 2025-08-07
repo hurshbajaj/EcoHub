@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="SIgnUp.css">
+    <link rel="stylesheet" href="New.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
 
-    <title>Sign Up</title>
+    <title>Request</title>
 </head>
 <body>
     <div class="lhs">
         <div class="head"> 
-            <p class="heading">Sign Up</p>
-            <p class="subh">Join Our Community Today!</p>
+            <p class="heading">Request</p>
+            <p class="subh">Submit another entry!</p>
         </div>
         
         <div class="feet">
             <div class="lf foot hovO">Go Back</div>
-            <div class="rf foot hovT">About Us</div>
+            <div class="rf foot hovT">Submit</div>
         </div>
     </div>
     <div class="sep"></div>
@@ -31,9 +31,12 @@
         </div>
         <div class="hr"></div>
         <div class="frm">
-           <input type="text" placeholder="Gmail" class="req">
-           <input type="text" placeholder="Verification Code" class="req" disabled>
-           <button class="submit req">Send Code</button>
+            <div class="baseOpts anim">
+                <input type="text" class="item" placeholder="Click me" readonly>
+                <input type="text" class="amt" placeholder="Eg. x10">
+            </div>
+           <input type="text" class="ptsI anim" readonly placeholder="Base Eco Points">
+           <textarea type="text" class="desc anim" placeholder="Description | Proof"></textarea>
         </div>
         <div class="hrad">
 
@@ -41,6 +44,6 @@
         
     </div>
 
-    <script src="SignUp.js" type="module"></script>
+    <script src="New.js" type="module"></script>
 </body>
 </html>

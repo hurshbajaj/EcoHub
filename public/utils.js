@@ -20,6 +20,7 @@ export function generateStarField(target = document.body) {
 }
 
 export function outro(url="/public/") {
+  document.querySelector(".hotbar").style.animation = "fadeOutUp 0.4s ease-out forwards";
     document.querySelector(".head").style.animation = "headingOut 1.5s ease-out forwards";
     document.querySelector(".hovO").classList.remove("hovO");
     document.querySelector(".hovT").classList.remove("hovT");
@@ -30,3 +31,39 @@ export function outro(url="/public/") {
       window.location.href = url;
     }, 500)
 }
+
+export function outroWeak(url="/public/") {
+  document.querySelector(".hotbar").style.animation = "fadeOutUp 0.4s ease-out forwards";
+    document.querySelector(".head").style.animation = "headingOut 1.5s ease-out forwards";
+    document.querySelector(".hovO").classList.remove("hovO");
+    setTimeout(()=>{
+      document.querySelector(".feet").style.animation = "feetOut 0.5s cubic-bezier(0,0.4,.8,1) forwards";
+    }, 0);
+    setTimeout(()=>{
+      window.location.href = url;
+    }, 500)
+}
+
+export function outroStrong(url="/public/") {
+  document.querySelector(".hotbar").style.animation = "fadeOutUp 0.4s ease-out forwards";
+    document.querySelector(".head").style.animation = "headingOut 1.5s ease-out forwards";
+    document.querySelector(".hovO").classList.remove("hovO");
+    setTimeout(()=>{
+      document.querySelector(".feet").style.animation = "feetOut 0.5s cubic-bezier(0,0.4,.8,1) forwards";
+    }, 0);
+    setTimeout(()=>{
+      window.location.href = url;
+    }, 500)
+
+    const reqs = document.querySelectorAll('.req');
+
+    if(reqs.length == 0 ) {
+      document.querySelector(".indic").classList.add("fade-out-f");
+    }
+
+    reqs.forEach((el, i) => {
+        const baseDelay = 1.5; 
+        const extraDelay = 0.1 * i; 
+        el.style.animation = `fadeOutUp 0.5s ${baseDelay + extraDelay}s cubic-bezier(.77,0,.175,1) forwards`;
+    });
+  }

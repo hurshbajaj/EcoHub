@@ -184,10 +184,6 @@ body {
     z-index: 1;
 }
 
-.req{
-    opacity: 0;
-}
-
 .frm{
     height: 100%;
     display: flex;
@@ -197,7 +193,6 @@ body {
 }
 
 input {
-    width: 40vw;
     margin-bottom: 5vh;
     height: 6vh;
     border-radius: 10px;
@@ -207,15 +202,6 @@ input {
 
     transition: width 0.3s ease-out;
     color: #545c76;
-}
-
-input:nth-child(1){
-    width: 35vw;
-}
-
-input:disabled {
-    background-color: #1d202b87;
-
 }
 
 .hr{
@@ -260,6 +246,15 @@ input:disabled {
     }
 }
 
+@keyframes shorten {
+    0%{
+        width: 35vw;
+    }
+    100%{
+        width: 0;
+    }
+}
+
 input:disabled:hover {
     cursor: not-allowed;
 }
@@ -274,23 +269,46 @@ input:focus::placeholder {
   color: transparent;
 }
 
-input:focus{
-    width: 35vw;
+.amt{
+    text-align: center;
 }
 
-.submit {
-    padding: 2vh 2vw;
-    margin-top: 4vh;
-    border: none;
-    border-radius: 6px;
-    background-color: var(--sepB);
-    color: white;
-    font-size: 2vh;
-
-    transition: margin 0.3s ease;
+.item{
+    text-align: center;
+    user-select: none;
 }
-.submit:hover {
+
+.ptsI:hover{
+    cursor: default;
+}
+
+.item:hover{
     cursor: pointer;
-    margin-top: calc(4vh - 10px);
-    margin-bottom: 10px;
+}
+
+.baseOpts{
+    display: flex;
+    width: 28vw;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ptsI{
+    background-color: var(--primary);
+    width: 25.5vw;
+    text-align: center;
+}
+
+textarea {
+    width: 28vw;
+    height: 10vh;
+    background-color: var(--sepB);
+    resize: none;
+    padding: 10px;
+    color: #545c76;
+}
+
+.shrink {
+    transition: transform 0.6s ease;
+    transform: scaleX(0);
 }
