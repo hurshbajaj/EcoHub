@@ -8,3 +8,5 @@ This is where you'll be able to see all the entries / requests users have submit
 Admins go over these requests every month and award points to those whom they believe genuinely helped move society on the basis of the proof / description. To submit such a request of your own, simply choose request, from there you'd be able to browse through the available options ("Click Me") including "other", set the amt / quantity of how much you have done that action and finally set a description / share proof of your work in the form of a google drive or so. Note: for "other", default base points remain 0, so kindly mention the amt of points you expect for doing the same in the desc. Once you have gained enough points, you can use the marketplace to buy cool items!
 
 Hosted Link: https://ecohub-2kwq.onrender.com/
+
+(Should be responsive for all laptops, not meant for mobile) (Do check out resizing the landing pg ;) mad satisfying)
