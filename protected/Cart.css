@@ -210,6 +210,7 @@ body {
     flex-direction: column;
     background-color: var(--item);
     width: 90%;
+    position: relative;
 }
 .req:hover{
     cursor: pointer;

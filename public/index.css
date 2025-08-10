@@ -74,10 +74,6 @@ body {
     transition: margin-bottom 0.1s ease-out;
 }
 
-.foot:hover{
-    margin-bottom: 10px;
-}
-
 .sliders {
     position: fixed;
     right: 0;

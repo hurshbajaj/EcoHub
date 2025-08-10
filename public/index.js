@@ -35,7 +35,7 @@ window.onload = () => {
     });
 
     document.getElementById("newu").addEventListener("click", ()=>{fade_out(); align();})
-    document.getElementById("oldu").addEventListener("click", ()=>{fade_out(); align("/public/Login.html");})
+    document.getElementById("oldu").addEventListener("click", ()=>{fade_out(); align("/Login");})
 };
 
 function fade_out() {
@@ -44,7 +44,7 @@ function fade_out() {
   });
 }
 
-function align(url="/public/SignUp.html") {
+function align(url="/SignUp") {
   const overlay = document.querySelector('.overlay');
 
   document.querySelectorAll('.star').forEach(el => {

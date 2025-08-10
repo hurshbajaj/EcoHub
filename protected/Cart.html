@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="SIgnUp.css">
+    <link rel="stylesheet" href="Main.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
 
-    <title>Sign Up</title>
+    <title>Shopping Cart</title>
 </head>
 <body>
     <div class="lhs">
         <div class="head"> 
-            <p class="heading">Sign Up</p>
-            <p class="subh">Join Our Community Today!</p>
+            <p class="heading">Shopping Cart</p>
+            <p class="subh">Manage your orders!</p>
         </div>
         
         <div class="feet">
-            <div class="lf foot hovO">Go Back</div>
-            <div class="rf foot hovT">About Us</div>
+            <div class="lf foot hovO">Return to Hub</div>
+            <div class="rf foot hovT">Marketplace</div>
         </div>
     </div>
     <div class="sep"></div>
@@ -29,19 +29,17 @@
             <p class="name">Alexa Klove</p>
             <p class="pts">12 pts</p>
         </div>
-        <p class="output" id="msgT">-</p>
-        <div class="hr"></div>
-        <div class="frm">
-           <input type="text" placeholder="Gmail" id="gmailI" class="req">
-           <input type="text" placeholder="Verification Code" id="verifI" class="req" disabled>
-           <button class="submit req" id="submit">Send Code</button>
+        <div class="reqs scroll">
+            <div class="req" title="Click me to cancel this order!">
+                <p class="req_sub">Hoodie - 16 pts</p>
+                <p class="desc">Arriving in 15 days...</p>
+            </div>
         </div>
-        <div class="hrad">
 
-        </div>
-        
+        <p class="indic">No Orders >:</p>
+        <button class="reqBtn">Verify Address</button>
     </div>
 
-    <script src="SignUp.js" type="module"></script>
+    <script src="Cart.js" type="module"></script>
 </body>
 </html>

@@ -207,6 +207,7 @@ body {
     background-color: #252835;
     height: 30vh;
     width: 100%;
+    border-radius: 10px;
 }
 .rlhs{
     flex: 1;

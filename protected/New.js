@@ -21,17 +21,8 @@ window.addEventListener("load", () => {
   });
 });
 
-document.querySelector(".rf").addEventListener("click", () => {
-  const hr = document.querySelector(".hr");             
-  hr.classList.add("shrink");           
-  const hrad = document.querySelector(".hrad");
-  hrad.classList.add("shrink");
-  document.querySelector(".frm").style.animation = "fadeOut 0.5s cubic-bezier(0,0.4,.8,1) forwards";
-  outro("/public/Main.html");
-});
-
 document.querySelector(".lf").addEventListener("click", () => {
-  window.location.href = "/public/";
+  window.location.href = "/";
 });
 
 const ecoActions = [
@@ -57,7 +48,6 @@ const ecoActions = [
   { action: "Petitions Signed", pts: 3 }
 ];
 
-
 let atitem = -1;
 
 let item = document.querySelector(".item");
@@ -68,11 +58,64 @@ amt.value = 0;
 item.addEventListener("click", ()=>{
   atitem += 1;
   item.value = ecoActions[atitem % ecoActions.length].action;
-  ptsI.value = ecoActions[atitem % ecoActions.length].pts * amt.value;
+  ptsI.value = ( ecoActions[atitem % ecoActions.length].pts * amt.value ) + " Eco Points";
 })
 
 amt.addEventListener("change", ()=>{
-  ptsI.value = ecoActions[atitem % ecoActions.length].pts * amt.value;
+  ptsI.value = ( ecoActions[atitem % ecoActions.length].pts * amt.value ) + " Eco Points";
 })
 
+document.querySelector(".rf").addEventListener("click", async () => {
+  if (atitem === -1) {
+    alert("Please select an item first");
+    return;
+  }
 
+  const selectedAction = ecoActions[atitem % ecoActions.length];
+  const amount = Number(amt.value);
+  const points = selectedAction.pts ? selectedAction.pts * amount : 0;
+  const description = document.querySelector(".desc").value.trim();
+
+  if (!amount || amount <= 0) {
+    alert("Please enter a valid amount");
+    return;
+  }
+
+  if (!description) {
+    alert("Please enter a description");
+    return;
+  }
+
+  try {
+    const res = await fetch("/api/new-req", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      credentials: "include",
+      body: JSON.stringify({
+        item: selectedAction.action,
+        amt: amount,
+        pts: points,
+        desc: description
+      })
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      const hr = document.querySelector(".hr");             
+      hr.classList.add("shrink");           
+      const hrad = document.querySelector(".hrad");
+      hrad.classList.add("shrink");
+      document.querySelector(".frm").style.animation = "fadeOut 0.5s cubic-bezier(0,0.4,.8,1) forwards";
+      
+      outro("/user/Main");
+    } else {
+      alert(data.error || "Failed to submit request");
+    }
+  } catch (err) {
+    console.error(err);
+    alert("Something went wrong");
+  }
+});
